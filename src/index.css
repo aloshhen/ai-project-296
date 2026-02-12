@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Russian flag gradient animation */
+@keyframes flag-wave {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.russian-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #0033A0 50%, #DA291C 100%);
+  background-size: 200% 200%;
+  animation: flag-wave 10s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0033A0;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DA291C;
+}
+
+/* Telegram safe area */
+.telegram-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .mobile-safe-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
